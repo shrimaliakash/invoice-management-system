@@ -1,0 +1,1 @@
+SELECT product.product_name,COUNT(invoice_details.`product_code`) AS TotalProduct,SUM(invoice_details.`price`) AS Prices,invoice_details.`quantity` AS Quantities,(invoice_details.price * invoice_details.quantity) AS Totals FROM product LEFT JOIN invoice_details ON product.product_code=invoice_details.product_code GROUP BY product.product_name 
